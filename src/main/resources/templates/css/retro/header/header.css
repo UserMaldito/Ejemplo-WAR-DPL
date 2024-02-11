@@ -1,0 +1,37 @@
+/* Header of the Page (RGB)*/
+header>abbr>a{
+    color: var(--color-letter-secondary);
+    :hover{
+        animation: colorChange infinite linear normal 7s;
+    }
+}
+
+/* That question mark */
+#helper{
+    text-decoration: none;
+    font-size: small;
+    position: relative;
+        top: -80px;
+        left: 270px;
+    >a{
+        color: red;
+        text-decoration: inherit;
+
+        :hover{
+            animation: colorChange infinite alternate-reverse linear 3s;
+        }
+    }
+    
+}
+
+@keyframes colorChange {
+    0%{
+        color: var(--color-letter-secondary);
+    }
+    25%{
+        color: var(--color-letter-info);
+    }
+    50%{
+        color: var(--color-background-important);
+    }
+}

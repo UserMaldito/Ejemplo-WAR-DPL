@@ -1,0 +1,124 @@
+/* Main Rules */
+main{
+    border: var(--border);
+    display: inherit;
+    gap: var(--space-between-things);
+
+    /* All the abbr */
+    abbr, abbr>select{
+        background-color: var(--color-background);
+        color: var(--color-letter-primary);
+    }
+    abbr:hover:not(abbr>select:hover):not(a>abbr){
+        /*All Abbr Hovered Except the Select and The Navigator Links*/
+        color: var(--color-letter-info);
+        text-decoration: underline lightpink;
+    }
+    
+
+    /* All Links Inside the Main (Except The Links On The Sections)*/ 
+    >a, a>*, a:not(section a){
+        color: var(--color-letter-link-normal);
+        background-color: inherit;
+        text-decoration: none;
+
+        :hover{
+            color: var(--color-letter-link-hovered);
+        }
+        :visited{
+            color: var(--color-letter-link-visited);
+        }
+    }
+
+    /* Section Rules Nested */
+    >section{
+        border: inherit;
+        min-width: 60%;
+        /* Section Article Rules Nested */
+        >article{
+            border: inherit;
+            >p{
+                padding: 0 20px;
+            }
+
+            /* Article List Rules Nested */
+            ul{
+                margin-right: 30px;
+            }
+        }
+    }
+
+    /* Aside Rules Nested */
+    >aside{
+        border: inherit;
+        display: inherit;
+        flex-direction: column;
+        min-width: 40%;
+
+        /* Aside Nav Rules Nested */
+        >nav{
+            display: inherit;
+            flex-direction: inherit;
+            align-items: center;
+
+            /* Nav List Rules Nested */
+            >ul{
+                list-style-type: none;
+                >li{
+                    margin: 13px;
+                    >a:before{
+                        content: "C:/";
+                        color: var(--color-background-important);
+                    }
+                }
+            }
+            select{
+                text-align: center;
+                margin: 20px;
+            }
+        }
+    }
+
+    /* All The Headers */
+    header{
+        text-align: center;
+    }
+}
+
+/* All the Important Things*/
+.important{
+    color: var(--color-letter-important);
+    background-color: var(--color-background-secondary);
+    border: 5px solid var(--color-background-important);
+    padding: 0 20px;
+    /* Abbr inside the Class Rules */
+    abbr{
+        background-color: var(--color-letter-info);
+        color: var(--color-letter-important);
+        text-decoration: underline lightblue;
+    }
+    abbr:hover{
+        background-color: var(--color-letter-important);
+        color: var(--color-letter-info);
+        text-decoration: underline lightpink;
+    }
+}
+
+
+/*Media Rules*/
+@media (max-width: 1000px) {
+    main{
+        flex-direction: column;
+        >section{
+            min-width: fit-content;
+        }
+        >aside{
+            nav{
+                flex-direction: row-reverse;
+                justify-content: center;
+                gap: var(--separator-2);
+                margin: 0 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+*:not(html, body, header, footer){
+    border: 1px solid black;
+}
+main{
+    min-height: fit-content;
+}
